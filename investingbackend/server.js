@@ -1,12 +1,21 @@
 import express from 'express';
+import db from "./config/mongoose-connection.js"
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-const port=3000;
 
-app.get('/',(req,res)=>{
-    res.send('Hello World!');
-});
+const port = process.env.PORT
 
-app.listen((port),()=>{
-    console.log(`Server is running on the port ${port}`);
-});
+
+
+db().then(()=>{
+    app.listen(port,()=>{
+        console.log(`Server is running on port ${port}`)
+    })
+})
+
+
+
+
