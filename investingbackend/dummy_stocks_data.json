@@ -1,0 +1,802 @@
+[
+  {
+    "symbol": "INFY",
+    "name": "Infosys",
+    "sector": "IT",
+    "marketCap": "Large",
+    "style": "Conservative",
+    "risk": "Low",
+    "avgReturn": 11.2,
+    "volatility": 12.1,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1489.74
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1462.48
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1442.52
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1430.94
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1429.49
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1443.09
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1451.48
+      }
+    ]
+  },
+  {
+    "symbol": "TCS",
+    "name": "Tata Consultancy",
+    "sector": "IT",
+    "marketCap": "Large",
+    "style": "Moderate",
+    "risk": "Low",
+    "avgReturn": 13.5,
+    "volatility": 13.0,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3657.76
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3691.84
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3701.83
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3643.45
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3706.03
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3664.49
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3661.03
+      }
+    ]
+  },
+  {
+    "symbol": "LTIM",
+    "name": "L&T Infotech",
+    "sector": "IT",
+    "marketCap": "Mid",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 18.7,
+    "volatility": 22.3,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 5170.26
+      },
+      {
+        "date": "2025-03-31",
+        "price": 5112.79
+      },
+      {
+        "date": "2025-04-01",
+        "price": 5048.84
+      },
+      {
+        "date": "2025-04-02",
+        "price": 5144.11
+      },
+      {
+        "date": "2025-04-03",
+        "price": 5083.91
+      },
+      {
+        "date": "2025-04-04",
+        "price": 5036.42
+      },
+      {
+        "date": "2025-04-05",
+        "price": 4990.62
+      }
+    ]
+  },
+  {
+    "symbol": "DRREDDY",
+    "name": "Dr. Reddy's Labs",
+    "sector": "Pharma",
+    "marketCap": "Large",
+    "style": "Conservative",
+    "risk": "Low",
+    "avgReturn": 9.4,
+    "volatility": 11.6,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 5498.43
+      },
+      {
+        "date": "2025-03-31",
+        "price": 5467.92
+      },
+      {
+        "date": "2025-04-01",
+        "price": 5474.0
+      },
+      {
+        "date": "2025-04-02",
+        "price": 5564.21
+      },
+      {
+        "date": "2025-04-03",
+        "price": 5621.64
+      },
+      {
+        "date": "2025-04-04",
+        "price": 5590.14
+      },
+      {
+        "date": "2025-04-05",
+        "price": 5678.05
+      }
+    ]
+  },
+  {
+    "symbol": "CIPLA",
+    "name": "Cipla",
+    "sector": "Pharma",
+    "marketCap": "Mid",
+    "style": "Moderate",
+    "risk": "Medium",
+    "avgReturn": 14.1,
+    "volatility": 17.0,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1274.67
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1252.6
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1261.66
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1262.73
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1263.82
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1241.94
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1241.95
+      }
+    ]
+  },
+  {
+    "symbol": "APLLTD",
+    "name": "Alembic Pharma",
+    "sector": "Pharma",
+    "marketCap": "Small",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 21.9,
+    "volatility": 28.4,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 710.17
+      },
+      {
+        "date": "2025-03-31",
+        "price": 701.65
+      },
+      {
+        "date": "2025-04-01",
+        "price": 704.12
+      },
+      {
+        "date": "2025-04-02",
+        "price": 713.37
+      },
+      {
+        "date": "2025-04-03",
+        "price": 708.78
+      },
+      {
+        "date": "2025-04-04",
+        "price": 718.67
+      },
+      {
+        "date": "2025-04-05",
+        "price": 712.91
+      }
+    ]
+  },
+  {
+    "symbol": "MARUTI",
+    "name": "Maruti Suzuki",
+    "sector": "Auto",
+    "marketCap": "Large",
+    "style": "Conservative",
+    "risk": "Low",
+    "avgReturn": 10.8,
+    "volatility": 10.3,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 9591.49
+      },
+      {
+        "date": "2025-03-31",
+        "price": 9501.2
+      },
+      {
+        "date": "2025-04-01",
+        "price": 9535.21
+      },
+      {
+        "date": "2025-04-02",
+        "price": 9373.84
+      },
+      {
+        "date": "2025-04-03",
+        "price": 9447.84
+      },
+      {
+        "date": "2025-04-04",
+        "price": 9512.76
+      },
+      {
+        "date": "2025-04-05",
+        "price": 9483.06
+      }
+    ]
+  },
+  {
+    "symbol": "TATAMOT",
+    "name": "Tata Motors",
+    "sector": "Auto",
+    "marketCap": "Mid",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 25.3,
+    "volatility": 29.2,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 634.82
+      },
+      {
+        "date": "2025-03-31",
+        "price": 644.1
+      },
+      {
+        "date": "2025-04-01",
+        "price": 646.43
+      },
+      {
+        "date": "2025-04-02",
+        "price": 634.79
+      },
+      {
+        "date": "2025-04-03",
+        "price": 637.41
+      },
+      {
+        "date": "2025-04-04",
+        "price": 627.02
+      },
+      {
+        "date": "2025-04-05",
+        "price": 631.58
+      }
+    ]
+  },
+  {
+    "symbol": "MOTHER",
+    "name": "Motherson Sumi",
+    "sector": "Auto",
+    "marketCap": "Mid",
+    "style": "Moderate",
+    "risk": "Medium",
+    "avgReturn": 15.5,
+    "volatility": 20.7,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 222.1
+      },
+      {
+        "date": "2025-03-31",
+        "price": 222.37
+      },
+      {
+        "date": "2025-04-01",
+        "price": 219.89
+      },
+      {
+        "date": "2025-04-02",
+        "price": 222.49
+      },
+      {
+        "date": "2025-04-03",
+        "price": 221.48
+      },
+      {
+        "date": "2025-04-04",
+        "price": 218.78
+      },
+      {
+        "date": "2025-04-05",
+        "price": 221.27
+      }
+    ]
+  },
+  {
+    "symbol": "HDFCBK",
+    "name": "HDFC Bank",
+    "sector": "Banking",
+    "marketCap": "Large",
+    "style": "Conservative",
+    "risk": "Low",
+    "avgReturn": 8.9,
+    "volatility": 9.1,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1651.73
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1623.73
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1653.03
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1631.66
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1640.51
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1652.66
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1678.11
+      }
+    ]
+  },
+  {
+    "symbol": "ICICIBK",
+    "name": "ICICI Bank",
+    "sector": "Banking",
+    "marketCap": "Large",
+    "style": "Moderate",
+    "risk": "Medium",
+    "avgReturn": 14.6,
+    "volatility": 15.8,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 938.57
+      },
+      {
+        "date": "2025-03-31",
+        "price": 921.0
+      },
+      {
+        "date": "2025-04-01",
+        "price": 907.58
+      },
+      {
+        "date": "2025-04-02",
+        "price": 906.57
+      },
+      {
+        "date": "2025-04-03",
+        "price": 896.5
+      },
+      {
+        "date": "2025-04-04",
+        "price": 885.73
+      },
+      {
+        "date": "2025-04-05",
+        "price": 900.18
+      }
+    ]
+  },
+  {
+    "symbol": "RBLBK",
+    "name": "RBL Bank",
+    "sector": "Banking",
+    "marketCap": "Small",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 27.1,
+    "volatility": 30.4,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 268.65
+      },
+      {
+        "date": "2025-03-31",
+        "price": 273.55
+      },
+      {
+        "date": "2025-04-01",
+        "price": 271.24
+      },
+      {
+        "date": "2025-04-02",
+        "price": 271.74
+      },
+      {
+        "date": "2025-04-03",
+        "price": 274.87
+      },
+      {
+        "date": "2025-04-04",
+        "price": 271.75
+      },
+      {
+        "date": "2025-04-05",
+        "price": 268.15
+      }
+    ]
+  },
+  {
+    "symbol": "HINDUNL",
+    "name": "Hindustan Unilever",
+    "sector": "FMCG",
+    "marketCap": "Large",
+    "style": "Conservative",
+    "risk": "Low",
+    "avgReturn": 6.7,
+    "volatility": 8.5,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 2444.1
+      },
+      {
+        "date": "2025-03-31",
+        "price": 2478.38
+      },
+      {
+        "date": "2025-04-01",
+        "price": 2484.87
+      },
+      {
+        "date": "2025-04-02",
+        "price": 2472.71
+      },
+      {
+        "date": "2025-04-03",
+        "price": 2451.01
+      },
+      {
+        "date": "2025-04-04",
+        "price": 2450.35
+      },
+      {
+        "date": "2025-04-05",
+        "price": 2459.0
+      }
+    ]
+  },
+  {
+    "symbol": "DABUR",
+    "name": "Dabur",
+    "sector": "FMCG",
+    "marketCap": "Mid",
+    "style": "Moderate",
+    "risk": "Medium",
+    "avgReturn": 12.3,
+    "volatility": 13.2,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 556.44
+      },
+      {
+        "date": "2025-03-31",
+        "price": 562.62
+      },
+      {
+        "date": "2025-04-01",
+        "price": 558.71
+      },
+      {
+        "date": "2025-04-02",
+        "price": 552.84
+      },
+      {
+        "date": "2025-04-03",
+        "price": 563.16
+      },
+      {
+        "date": "2025-04-04",
+        "price": 563.26
+      },
+      {
+        "date": "2025-04-05",
+        "price": 557.96
+      }
+    ]
+  },
+  {
+    "symbol": "RADICO",
+    "name": "Radico Khaitan",
+    "sector": "FMCG",
+    "marketCap": "Small",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 23.4,
+    "volatility": 25.8,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1422.63
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1419.1
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1431.35
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1410.39
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1421.65
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1428.83
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1421.79
+      }
+    ]
+  },
+  {
+    "symbol": "RELIANCE",
+    "name": "Reliance Industries",
+    "sector": "Energy",
+    "marketCap": "Large",
+    "style": "Moderate",
+    "risk": "Medium",
+    "avgReturn": 11.9,
+    "volatility": 14.5,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 2727.85
+      },
+      {
+        "date": "2025-03-31",
+        "price": 2766.29
+      },
+      {
+        "date": "2025-04-01",
+        "price": 2715.1
+      },
+      {
+        "date": "2025-04-02",
+        "price": 2699.79
+      },
+      {
+        "date": "2025-04-03",
+        "price": 2660.74
+      },
+      {
+        "date": "2025-04-04",
+        "price": 2647.22
+      },
+      {
+        "date": "2025-04-05",
+        "price": 2656.9
+      }
+    ]
+  },
+  {
+    "symbol": "NTPC",
+    "name": "NTPC",
+    "sector": "Energy",
+    "marketCap": "Large",
+    "style": "Conservative",
+    "risk": "Low",
+    "avgReturn": 7.8,
+    "volatility": 7.4,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 304.2
+      },
+      {
+        "date": "2025-03-31",
+        "price": 306.14
+      },
+      {
+        "date": "2025-04-01",
+        "price": 309.18
+      },
+      {
+        "date": "2025-04-02",
+        "price": 307.18
+      },
+      {
+        "date": "2025-04-03",
+        "price": 303.79
+      },
+      {
+        "date": "2025-04-04",
+        "price": 302.82
+      },
+      {
+        "date": "2025-04-05",
+        "price": 304.77
+      }
+    ]
+  },
+  {
+    "symbol": "IEX",
+    "name": "Indian Energy Exch",
+    "sector": "Energy",
+    "marketCap": "Small",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 30.6,
+    "volatility": 32.2,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 154.29
+      },
+      {
+        "date": "2025-03-31",
+        "price": 154.5
+      },
+      {
+        "date": "2025-04-01",
+        "price": 153.88
+      },
+      {
+        "date": "2025-04-02",
+        "price": 151.88
+      },
+      {
+        "date": "2025-04-03",
+        "price": 154.14
+      },
+      {
+        "date": "2025-04-04",
+        "price": 156.52
+      },
+      {
+        "date": "2025-04-05",
+        "price": 153.59
+      }
+    ]
+  },
+  {
+    "symbol": "BEL",
+    "name": "Bharat Electronics",
+    "sector": "Defense",
+    "marketCap": "Mid",
+    "style": "Moderate",
+    "risk": "Medium",
+    "avgReturn": 16.2,
+    "volatility": 17.9,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 196.54
+      },
+      {
+        "date": "2025-03-31",
+        "price": 193.21
+      },
+      {
+        "date": "2025-04-01",
+        "price": 194.25
+      },
+      {
+        "date": "2025-04-02",
+        "price": 192.99
+      },
+      {
+        "date": "2025-04-03",
+        "price": 195.48
+      },
+      {
+        "date": "2025-04-04",
+        "price": 194.9
+      },
+      {
+        "date": "2025-04-05",
+        "price": 192.57
+      }
+    ]
+  },
+  {
+    "symbol": "BHEL",
+    "name": "BHEL",
+    "sector": "Energy",
+    "marketCap": "Mid",
+    "style": "Aggressive",
+    "risk": "High",
+    "avgReturn": 28.9,
+    "volatility": 31.3,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 163.41
+      },
+      {
+        "date": "2025-03-31",
+        "price": 164.09
+      },
+      {
+        "date": "2025-04-01",
+        "price": 164.72
+      },
+      {
+        "date": "2025-04-02",
+        "price": 165.06
+      },
+      {
+        "date": "2025-04-03",
+        "price": 167.77
+      },
+      {
+        "date": "2025-04-04",
+        "price": 169.04
+      },
+      {
+        "date": "2025-04-05",
+        "price": 166.0
+      }
+    ]
+  }
+]
