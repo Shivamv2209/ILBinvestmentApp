@@ -51,3 +51,21 @@ export const login = async (req,res) =>{
         res.status(500).json({error: "Server error"})
     }
 }
+
+export const getMe = async (req, res) => {
+  const token = req.cookies.token;
+  if (!token) return res.status(401).json({ message: "Not logged in" });
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await user_model.findById(decoded.id).select("-password");
+    res.json(user);
+  } catch (err) {
+    res.status(401).json({ message: "Invalid token" });
+  }
+};
+
+export const logout = (req,res) => {
+    res.cookie("token","");
+    res.json({message: "User logged out successfully"});
+}

@@ -4,9 +4,10 @@ import { Server } from 'socket.io';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import db from './config/mongoose-connection.js';
+import masterRoutes from "./routes/masterRoutes.js";
 import userRouter from './routes/userRouter.js';
-import MutualFundMaster from './models/MutualFundMaster.js';
-import StockMaster from './models/StockMaster.js';
+import MutualFundMaster from './models/mutualfundmaster.js';
+import StockMaster from './models/stockmaster.js';
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 app.use("/api/user", userRouter);
+app.use("/api/master", masterRoutes);
 
 // Function to simulate price/NAV change
 const simulateChange = (value) => {
@@ -56,12 +58,16 @@ io.on("connection", (socket) => {
         };
       });
 
-      const updatedStocks = stocks.map(stock => ({
-        ticker: stock.ticker,
-        name: stock.name,
-        currentPrice: stock.currentPrice ? simulateChange(stock.currentPrice) : null,
-        date: now,
-      }));
+      const updatedStocks = stocks.map((stock) => {
+        const latestPrice = stock.priceHistory?.at(-1)?.price;
+        return {
+          symbol: stock.symbol,
+          name: stock.name,
+          currentPrice: latestPrice ? simulateChange(latestPrice) : null,
+          date: now,
+        };
+      });
+      
 
       socket.emit("liveMutualFunds", updatedFunds);
       socket.emit("liveStocks", updatedStocks);
