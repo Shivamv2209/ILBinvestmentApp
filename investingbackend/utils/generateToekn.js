@@ -9,6 +9,5 @@ export const generateToken = (user) =>{
             email:user.email,
             id:user._id,
         },
-        process.env.JWTSECRET
-    )
+        process.env.JWTSECRET)
 }
