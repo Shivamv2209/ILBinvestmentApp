@@ -3,7 +3,7 @@ import { generateToken } from "../utils/generateToekn.js";
 import user_model from "../models/User.js"
 
 export const signup = async (req,res)=>{
-  let {email,password}= req.body;
+  let {name,email,password}= req.body;
   try{
     const user = await user_model.findOne({email});
     if(user){
@@ -13,6 +13,7 @@ export const signup = async (req,res)=>{
     bcrypt.genSalt(10,(err,salt)=>{
        bcrypt.hash(password,salt, async (err,hash)=>{
          let user = await user_model.create({
+            name,
             email,
             password: hash
          })
