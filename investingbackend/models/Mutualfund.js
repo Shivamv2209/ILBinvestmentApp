@@ -7,16 +7,15 @@ const mutualFundSchema = new mongoose.Schema({
     fundHouse: String,
     nav: Number,
     units: Number,
+    aum_cr: Number,
+    risk: String,
+    style: String,
     investedAmount: Number,
     currentValue: Number,
     purchaseDate: Date,
-    category: String,
+    sector_focus: String,
     riskLevel: String,
-    returns: {
-      oneYear: Number,
-      threeYear: Number,
-      fiveYear: Number,
-    },
+    return_1y:  Number,
   });
 
   export default mongoose.model("mutualFunds", mutualFundSchema);
