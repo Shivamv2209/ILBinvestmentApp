@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
+import mastermodel from "./models/mutualfundmaster.js"
 
 // Enable .env variables
 dotenv.config();
@@ -21,38 +22,19 @@ mongoose
   console.error('MongoDB connection error:', err);
 });
 
-// Schema definition
-const mutualFundMasterSchema = new mongoose.Schema({
-  symbol: String,
-  name: String,
-  type: String,
-  risk: String,
-  style: String,
-  return_1y: Number,
-  return_3y: Number,
-  return_5y: Number,
-  aum_cr: Number,
-  sector_focus: String,
-  isin: { type: String, unique: true },
-  navHistory: [
-    {
-      date: Date,
-      nav: Number
-    }
-  ]
-});
 
-const MutualFundMaster = mongoose.model('MutualFundMaster', mutualFundMasterSchema);
+
+
 
 // Main seeding function
 const seedMutualFunds = async () => {
   try {
-    const dataPath = path.join(__dirname, 'dummy_mutual_fund_data_.json');
+    const dataPath = path.join(__dirname, 'dummy_mutual_funds_data.json');
     const fileContent = await fs.readFile(dataPath, 'utf-8');
     const mutualFunds = JSON.parse(fileContent);
 
-    await MutualFundMaster.deleteMany({});
-    await MutualFundMaster.insertMany(mutualFunds);
+    await mastermodel.deleteMany({});
+    await mastermodel.insertMany(mutualFunds);
 
     console.log('✅ Mutual fund master data seeded successfully!');
   } catch (err) {
