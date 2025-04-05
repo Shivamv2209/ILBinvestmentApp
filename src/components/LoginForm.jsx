@@ -8,7 +8,6 @@ const AuthForm = ({ onClose, initialMode = 'login' }) => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  // Update the form mode when initialMode prop changes
   useEffect(() => {
     setIsLogin(initialMode === 'login');
   }, [initialMode]);
@@ -21,13 +20,9 @@ const AuthForm = ({ onClose, initialMode = 'login' }) => {
 
     try {
       const payload = isLogin ? { email, password } : { name, email, password };
-      const res = await axios.post(
-        endpoint,
-        payload,
-        { withCredentials: true }
-      );
+      const res = await axios.post(endpoint, payload, { withCredentials: true });
       setMessage(res.data.message || "Success!");
-      // Close the form after successful login/signup after a short delay
+
       setTimeout(() => {
         onClose && onClose();
       }, 1500);
@@ -38,79 +33,103 @@ const AuthForm = ({ onClose, initialMode = 'login' }) => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>{isLogin ? "Log In" : "Sign Up"}</h2>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        {!isLogin && (
+    <div style={styles.overlay}>
+      <div style={styles.container}>
+        <button onClick={onClose} style={styles.closeButton}>×</button>
+        <h2 style={styles.title}>{isLogin ? "Log In" : "Sign Up"}</h2>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          {!isLogin && (
+            <input
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              style={styles.input}
+            />
+          )}
           <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             style={styles.input}
           />
-        )}
-        <input
-          type="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={styles.input}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={styles.input}
-        />
-        
-        <div style={styles.actionRow}>
-          <button type="submit" style={styles.submitButton}>
-            {isLogin && (
-              <span style={styles.userIcon}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </span>
-            )}
-            {isLogin ? "Log In" : "Sign Up"}
-          </button>
-          
-          {isLogin && (
-            <button type="button" style={styles.forgotButton}>
-              Forgot Password
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={styles.input}
+          />
+
+          {/* Updated actionRow layout based on login/signup */}
+          <div
+            style={{
+              ...styles.actionRow,
+              justifyContent: isLogin ? "space-between" : "center",
+            }}
+          >
+            <button type="submit" style={styles.submitButton}>
+              {isLogin ? "Log In" : "Sign Up"}
             </button>
-          )}
-        </div>
-      </form>
-      
-      <button 
-        onClick={() => setIsLogin(!isLogin)} 
-        style={styles.toggleButton}
-      >
-        {isLogin ? "Or Sign-up instead" : "Or Log-in instead"}
-      </button>
-      
-      {message && <p style={styles.message}>{message}</p>}
+            {isLogin && (
+              <button type="button" style={styles.forgotButton}>
+                Forgot Password
+              </button>
+            )}
+          </div>
+        </form>
+
+        <button
+          onClick={() => setIsLogin(!isLogin)}
+          style={styles.toggleButton}
+        >
+          {isLogin ? "Or Sign-up instead" : "Or Log-in instead"}
+        </button>
+
+        {message && <p style={styles.message}>{message}</p>}
+      </div>
     </div>
   );
 };
 
 const styles = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    backdropFilter: "blur(8px)",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 1000,
+  },
   container: {
-    width: "100%",
+    position: "relative",
+    width: "90%",
     maxWidth: "500px",
-    margin: "0 auto",
     padding: "40px",
     borderRadius: "25px",
     textAlign: "center",
     backgroundColor: "#2D3542",
     color: "white",
     boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+  },
+  closeButton: {
+    position: "absolute",
+    top: "15px",
+    right: "20px",
+    fontSize: "24px",
+    background: "transparent",
+    border: "none",
+    color: "#fff",
+    cursor: "pointer",
   },
   title: {
     fontSize: "28px",
@@ -127,15 +146,14 @@ const styles = {
     padding: "15px 20px",
     fontSize: "16px",
     borderRadius: "50px",
-    border: "none",
-    backgroundColor: "#E9E9E9",
-    color: "#333",
+    border: "1px solid #888",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    color: "white",
     width: "100%",
     boxSizing: "border-box",
   },
   actionRow: {
     display: "flex",
-    justifyContent: "space-between",
     alignItems: "center",
     marginTop: "10px",
   },
@@ -151,10 +169,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     transition: "background-color 0.2s",
-  },
-  userIcon: {
-    display: "flex",
-    marginRight: "8px",
   },
   forgotButton: {
     background: "none",
