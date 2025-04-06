@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import angelOneApi from "../services/angelOneApi";
+import angelOneApi from '../services/angelOneApi';
 
 // Create context
 const ApiContext = createContext();

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useUser } from "../contexts/UserContext";
 
 const AuthForm = ({ onClose, initialMode = 'login' }) => {
   const [isLogin, setIsLogin] = useState(initialMode === 'login');
@@ -7,6 +8,7 @@ const AuthForm = ({ onClose, initialMode = 'login' }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const { login } = useUser();
 
   useEffect(() => {
     setIsLogin(initialMode === 'login');
@@ -22,6 +24,16 @@ const AuthForm = ({ onClose, initialMode = 'login' }) => {
       const payload = isLogin ? { email, password } : { name, email, password };
       const res = await axios.post(endpoint, payload, { withCredentials: true });
       setMessage(res.data.message || "Success!");
+
+      // Login the user with the data from response
+      const userData = {
+        name: res.data.user?.name || (isLogin ? '' : name),
+        email: res.data.user?.email || email,
+        id: res.data.user?.id,
+        token: res.data.token
+      };
+      
+      login(userData);
 
       setTimeout(() => {
         onClose && onClose();

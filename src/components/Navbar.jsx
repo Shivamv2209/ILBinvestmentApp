@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 import useNavigate
+import { useNavigate, useLocation } from 'react-router-dom';
 import AuthForm from './LoginForm';
+import { useUser } from '../contexts/UserContext';
 
 const Navbar = () => {
   const [showAuthForm, setShowAuthForm] = useState(false);
   const [authMode, setAuthMode] = useState('login');
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
-  const navigate = useNavigate(); // 👈 create navigate hook
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user, logout } = useUser();
 
   const handleLogin = () => {
     setAuthMode('login');
@@ -18,6 +21,11 @@ const Navbar = () => {
     setShowAuthForm(true);
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   const handleCloseAuthForm = () => {
     setShowAuthForm(false);
   };
@@ -26,57 +34,84 @@ const Navbar = () => {
     setSideMenuOpen(!sideMenuOpen);
   };
 
-  const goToProfile = () => {
-    navigate('/profile'); // 👈 navigate to profile
-    setSideMenuOpen(false); // Close the menu
+  const goTo = (path) => {
+    navigate(path);
+    setSideMenuOpen(false);
   };
+
+  const isActive = (path) => location.pathname === path;
+
+  const menuItems = [
+    { name: 'Dashboard', path: '/' },
+    { name: 'My Investments', path: '/investments' },
+    { name: 'Explore', path: '/explore' },
+    { name: 'Comparison Tool', path: '/compare' },
+    { name: 'Terms & Conditions', path: '/terms' },
+  ];
 
   return (
     <>
       <nav className="bg-black py-4 px-6 flex justify-between items-center border-b border-gray-800">
-        <div>
-          <button className="text-white" onClick={toggleSideMenu}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+        <button className="text-white" onClick={toggleSideMenu}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
         <div className="flex gap-2">
-          <button onClick={handleLogin} className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md">
-            Log in
-          </button>
-          <button onClick={handleSignup} className="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-md">
-            Sign up
-          </button>
+          {user ? (
+            <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md">
+              Log out
+            </button>
+          ) : (
+            <>
+              <button onClick={handleLogin} className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md">
+                Log in
+              </button>
+              <button onClick={handleSignup} className="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-md">
+                Sign up
+              </button>
+            </>
+          )}
         </div>
       </nav>
 
       {/* Side Menu */}
-      <div
-        className={`fixed top-0 left-0 w-64 h-full bg-gray-900 text-white transform transition-transform duration-300 ease-in-out z-40 ${
-          sideMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
+      <div className={`fixed top-0 left-0 w-64 h-full bg-gray-900 text-white transform transition-transform duration-300 ease-in-out z-40 ${sideMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 border-b border-gray-800 flex items-center">
-          <span className="text-xl font-semibold">User's Name</span>
+          <span className="text-xl font-semibold">{user ? user.name : "Guest User"}</span>
           <button onClick={toggleSideMenu} className="ml-auto text-white">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
+
         <div className="py-4">
-          <div onClick={goToProfile} className="px-4 py-2 hover:bg-gray-800 cursor-pointer">My Profile</div> {/* 👈 updated */}
-          <div className="px-4 py-2 hover:bg-gray-800 cursor-pointer flex items-center">
-            <span>Dashboard</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+          <div onClick={() => goTo('/profile')} className={`px-4 py-2 hover:bg-gray-800 cursor-pointer ${isActive('/profile') ? 'bg-green-600 text-white flex justify-between' : ''}`}>
+            <span>My Profile</span>
+            {isActive('/profile') && (
+              <svg className="w-4 h-4 text-white ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
+            )}
           </div>
-          <div className="px-4 py-2 hover:bg-gray-800 cursor-pointer">My Investments</div>
-          <div className="px-4 py-2 hover:bg-gray-800 cursor-pointer">Explore</div>
-          <div className="px-4 py-2 hover:bg-gray-800 cursor-pointer">Comparison Tool</div>
-          <div className="px-4 py-2 hover:bg-gray-800 cursor-pointer">Terms & Conditions</div>
+
+          {menuItems.map(({ name, path }) => (
+            <div key={path} onClick={() => goTo(path)} className={`px-4 py-2 hover:bg-gray-800 cursor-pointer flex justify-between items-center ${isActive(path) ? 'bg-green-600 text-white' : ''}`}>
+              <span>{name}</span>
+              {isActive(path) && (
+                <svg className="w-4 h-4 text-white ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                </svg>
+              )}
+            </div>
+          ))}
+
+          {user && (
+            <div onClick={handleLogout} className="px-4 py-2 hover:bg-gray-800 cursor-pointer mt-4 text-red-400">
+              <span>Logout</span>
+            </div>
+          )}
         </div>
       </div>
 

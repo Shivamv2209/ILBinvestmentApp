@@ -87,7 +87,7 @@ const MyProfile = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <h2 className="text-white text-xl font-medium">Aditya Daksh</h2>
+        <h2 className="text-white text-xl font-medium">Love Singh</h2>
       </div>
       
       {/* Investment Dashboard */}

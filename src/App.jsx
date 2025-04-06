@@ -1,7 +1,9 @@
-// App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApiProvider } from './contexts/ApiContext';
+import { UserProvider } from './contexts/UserContext';
+
+import TradeForm from './components/TradeForm';
 import Navbar from './components/Navbar';
 import MainChart from './components/MainChart';
 import MarketIndices from './components/MarketIndices';
@@ -10,9 +12,12 @@ import TopStocks from './components/TopStocks';
 import PortfolioDashboard from './components/PortfolioDashboard';
 import Modal from './components/Modal';
 import LoginForm from './components/LoginForm';
-import TradeForm from './components/TradeForm';
 import StockComparison from './components/StockComparison';
-import MyProfile from './components/MyProfile'; // 👈 import MyProfile
+import MyProfile from './components/MyProfile';
+import MyInvestments from './components/MyInvestments';
+import ExploreStocks from './components/ExploreStocks';
+import TermsAndConditions from './components/TermsAndConditions';
+
 
 function Home({ onBuyClick, onSellClick }) {
   return (
@@ -55,25 +60,34 @@ function App() {
 
   return (
     <ApiProvider>
-      <Router>
-        <div className="min-h-screen bg-black text-white">
-          <Navbar onLoginClick={handleLoginClick} />
+      <UserProvider>
+        <Router>
+          <div className="min-h-screen bg-black text-white">
+            {/* Navbar now includes the sidebar navigation */}
+            <Navbar onLoginClick={handleLoginClick} />
 
-          <Routes>
-            <Route path="/" element={<Home onBuyClick={handleBuyClick} onSellClick={handleSellClick} />} />
-            <Route path="/compare" element={<StockComparison />} />
-            <Route path="/profile" element={<MyProfile />} /> {/* 👈 new route */}
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home onBuyClick={handleBuyClick} onSellClick={handleSellClick} />} />
+              <Route path="/portfolio" element={<PortfolioDashboard />} />
+              <Route path="/investments" element={<MyInvestments />} />
+              <Route path="/explore" element={<ExploreStocks />} />
+              <Route path="/compare" element={<StockComparison />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/profile" element={<MyProfile />} />
+            </Routes>
 
-          <Modal isOpen={showLoginModal} onClose={() => setShowLoginModal(false)}>
-            <LoginForm onClose={() => setShowLoginModal(false)} />
-          </Modal>
+            {/* Login Modal */}
+            <Modal isOpen={showLoginModal} onClose={() => setShowLoginModal(false)}>
+              <LoginForm onClose={() => setShowLoginModal(false)} />
+            </Modal>
 
-          <Modal isOpen={showTradeModal} onClose={() => setShowTradeModal(false)}>
-            <TradeForm action={tradeAction} onClose={() => setShowTradeModal(false)} />
-          </Modal>
-        </div>
-      </Router>
+            {/* Trade Modal */}
+            <Modal isOpen={showTradeModal} onClose={() => setShowTradeModal(false)}>
+              <TradeForm action={tradeAction} onClose={() => setShowTradeModal(false)} />
+            </Modal>
+          </div>
+        </Router>
+      </UserProvider>
     </ApiProvider>
   );
 }

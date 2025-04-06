@@ -1,164 +1,98 @@
-import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
+import axios from "axios";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-const MainChart = () => {
-  const chartRef = useRef(null);
-  
+const socket = io("http://localhost:3000");
+
+const LiveChart = () => {
+  const [fundsList, setFundsList] = useState([]);
+  const [stocksList, setStocksList] = useState([]);
+  const [selectedSymbol, setSelectedSymbol] = useState("");
+  const [isFund, setIsFund] = useState(true);
+  const [chartData, setChartData] = useState([]);
+
   useEffect(() => {
-    // Fetch historical data from Angel One Smart API
-    const fetchChartData = async () => {
-      try {
-        // This would be your actual API call
-        // const response = await angelOneApi.getHistoricalData('NIFTY', '1D');
-        // const data = response.data;
-        
-        // For demonstration, using mock data similar to the chart in the image
-        const mockData = generateMockData();
-        renderChart(mockData);
-      } catch (error) {
-        console.error('Error fetching chart data:', error);
-      }
+    const fetchLists = async () => {
+      const [fundsRes, stocksRes] = await Promise.all([
+        axios.get("http://localhost:3000/api/master/funds"),
+        axios.get("http://localhost:3000/api/master/stocks"),
+      ]);
+      setFundsList(fundsRes.data);
+      setStocksList(stocksRes.data);
+      if (fundsRes.data.length > 0) setSelectedSymbol(fundsRes.data[0].symbol);
     };
-    
-    fetchChartData();
+    fetchLists();
   }, []);
-  
-  const generateMockData = () => {
-    // Generate sample data from 1991 to 2024 similar to the chart in the image
-    const data = [];
-    let value = 1000;
-    
-    for (let year = 1991; year <= 2024; year++) {
-      // Create exponential growth with some fluctuation
-      if (year > 2000) value *= 1.12 * (0.95 + Math.random() * 0.1);
-      else value *= 1.05 * (0.95 + Math.random() * 0.1);
-      
-      // Add more data points per year for a smoother curve
-      for (let month = 0; month < 12; month += 3) {
-        const monthValue = value * (0.98 + Math.random() * 0.04);
-        data.push({
-          date: new Date(year, month, 1),
-          value: monthValue
-        });
-      }
-    }
-    
-    return data;
-  };
-  
-  const renderChart = (data) => {
-    if (!chartRef.current) return;
-    
-    // Clear previous chart
-    d3.select(chartRef.current).selectAll("*").remove();
-    
-    const margin = { top: 20, right: 30, bottom: 30, left: 60 };
-    const width = chartRef.current.clientWidth - margin.left - margin.right;
-    const height = 300 - margin.top - margin.bottom;
-    
-    const svg = d3.select(chartRef.current)
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
-    
-    // X scale
-    const x = d3.scaleTime()
-      .domain(d3.extent(data, d => d.date))
-      .range([0, width]);
-    
-    // Y scale
-    const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.value) * 1.1])
-      .range([height, 0]);
-    
-    // Add X axis
-    svg.append("g")
-      .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(x)
-        .tickFormat(d3.timeFormat("%Y"))
-        .ticks(d3.timeYear.every(3)))
-      .style("color", "#4B5563");
-    
-    // Add Y axis
-    svg.append("g")
-      .call(d3.axisLeft(y)
-        .tickFormat(d => {
-          if (d >= 1000) return `${d/1000}k`;
-          return d;
-        }))
-      .style("color", "#4B5563");
-    
-    // Add the line
-    svg.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "#10B981")
-      .attr("stroke-width", 2)
-      .attr("d", d3.line()
-        .x(d => x(d.date))
-        .y(d => y(d.value))
-        .curve(d3.curveMonotoneX)
-      );
-    
-    // Add a subtle area below the line
-    svg.append("path")
-      .datum(data)
-      .attr("fill", "url(#gradient)")
-      .attr("stroke", "none")
-      .attr("d", d3.area()
-        .x(d => x(d.date))
-        .y0(height)
-        .y1(d => y(d.value))
-        .curve(d3.curveMonotoneX)
-      );
-    
-    // Add gradient
-    const gradient = svg.append("defs")
-      .append("linearGradient")
-      .attr("id", "gradient")
-      .attr("x1", "0%")
-      .attr("y1", "0%")
-      .attr("x2", "0%")
-      .attr("y2", "100%");
-    
-    gradient.append("stop")
-      .attr("offset", "0%")
-      .attr("stop-color", "#10B981")
-      .attr("stop-opacity", 0.3);
-    
-    gradient.append("stop")
-      .attr("offset", "100%")
-      .attr("stop-color", "#10B981")
-      .attr("stop-opacity", 0);
-  };
-  
+
   useEffect(() => {
-    // Handle window resize
-    const handleResize = () => {
-      // Re-render chart with new dimensions
-      const fetchChartData = async () => {
-        try {
-          const mockData = generateMockData();
-          renderChart(mockData);
-        } catch (error) {
-          console.error('Error fetching chart data:', error);
-        }
-      };
-      
-      fetchChartData();
+    socket.on("liveMutualFunds", (data) => {
+      if (isFund) {
+        const selected = data.find((f) => f.symbol === selectedSymbol);
+        if (selected)
+          setChartData((prev) => [...prev.slice(-19), { date: selected.date, value: selected.nav }]);
+      }
+    });
+
+    socket.on("liveStocks", (data) => {
+      if (!isFund) {
+        const selected = data.find((s) => s.symbol === selectedSymbol);
+        if (selected)
+          setChartData((prev) => [...prev.slice(-19), { date: selected.date, value: selected.currentPrice }]);
+      }
+    });
+
+    return () => {
+      socket.off("liveMutualFunds");
+      socket.off("liveStocks");
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
+  }, [selectedSymbol, isFund]);
+
+  const handleSwitch = (type) => {
+    setIsFund(type === "fund");
+    const list = type === "fund" ? fundsList : stocksList;
+    setSelectedSymbol(list[0]?.symbol);
+    setChartData([]);
+  };
+
+  const handleSelect = (e) => {
+    setSelectedSymbol(e.target.value);
+    setChartData([]);
+  };
+
   return (
-    <div className="mt-4 mb-6 h-80">
-      <div className="w-full h-full" ref={chartRef}></div>
+    <div className="p-4 max-w-3xl mx-auto">
+      <div className="mb-4 flex gap-4">
+        <button onClick={() => handleSwitch("fund")} className={`px-4 py-2 rounded ${isFund ? "bg-blue-500 text-white" : "bg-blue-200 text-black"}`}>Mutual Funds</button>
+        <button onClick={() => handleSwitch("stock")} className={`px-4 py-2 rounded ${!isFund ? "bg-green-500 text-white" : "bg-green-500 text-black"}`}>Stocks</button>
+        <select onChange={handleSelect} value={selectedSymbol} className="ml-auto px-3 py-2 border rounded bg-blue-500">
+          {(isFund ? fundsList : stocksList).map((item) => (
+            <option key={item.symbol} value={item.symbol}>{item.name}</option>
+          ))}
+        </select>
+      </div>
+
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart data={chartData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" tick={{ fontSize: 12 }} />
+          <YAxis domain={["auto", "auto"]} tick={{ fontSize: 12 }} />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} dot={false} />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };
 
-export default MainChart;
+export default LiveChart;
