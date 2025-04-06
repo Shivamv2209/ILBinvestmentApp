@@ -8,6 +8,7 @@ import masterRoutes from "./routes/masterRoutes.js";
 import userRouter from './routes/userRouter.js';
 import MutualFundMaster from './models/mutualfundmaster.js';
 import StockMaster from './models/stockmaster.js';
+import recommendRoutes from './routes/recommendRoutes.js';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 // API Routes
 app.use("/api/user", userRouter);
 app.use("/api/master", masterRoutes);
+app.use("/api", recommendRoutes)
 
 // Function to simulate price/NAV change
 const simulateChange = (value) => {
