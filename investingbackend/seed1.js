@@ -18,6 +18,7 @@ mongoose.connect(MONGO_URI).then(() => {
 
 async function seedStocks() {
   try {
+    
     // await StockMaster.deleteMany({});
     // console.log('🗑️ Cleared old stock data');
 
