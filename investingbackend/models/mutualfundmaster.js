@@ -9,7 +9,6 @@ const mutualFundMasterSchema = new mongoose.Schema({
   return_1y: Number,
   aum_cr: Number,
   sector_focus: String,
-  isin: { type: String, unique: true },
   navHistory: [
     {
       date: Date,

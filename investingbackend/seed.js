@@ -33,7 +33,7 @@ const seedMutualFunds = async () => {
     const fileContent = await fs.readFile(dataPath, 'utf-8');
     const mutualFunds = JSON.parse(fileContent);
 
-    await mastermodel.deleteMany({});
+    // await mastermodel.deleteMany({});
     await mastermodel.insertMany(mutualFunds);
 
     console.log('✅ Mutual fund master data seeded successfully!');

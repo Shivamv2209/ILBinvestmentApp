@@ -1,0 +1,802 @@
+[
+  {
+    "symbol": "DMART.NS",
+    "name": "Avenue Supermarts Ltd",
+    "sector": "Retail",
+    "marketCap": "Large Cap",
+    "style": "Growth",
+    "risk": "Medium",
+    "avgReturn": 14.2,
+    "volatility": 1.8,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3719.86
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3732.08
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3722.57
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3697.76
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3676.14
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3652.45
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3680
+      }
+    ]
+  },
+  {
+    "symbol": "PIDILITIND.NS",
+    "name": "Pidilite Industries Ltd",
+    "sector": "Chemicals",
+    "marketCap": "Large Cap",
+    "style": "Blend",
+    "risk": "Low",
+    "avgReturn": 13.5,
+    "volatility": 1.2,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 2782.68
+      },
+      {
+        "date": "2025-03-31",
+        "price": 2781.96
+      },
+      {
+        "date": "2025-04-01",
+        "price": 2763.69
+      },
+      {
+        "date": "2025-04-02",
+        "price": 2757.02
+      },
+      {
+        "date": "2025-04-03",
+        "price": 2768.68
+      },
+      {
+        "date": "2025-04-04",
+        "price": 2749.82
+      },
+      {
+        "date": "2025-04-05",
+        "price": 2750
+      }
+    ]
+  },
+  {
+    "symbol": "PAGEIND.NS",
+    "name": "Page Industries Ltd",
+    "sector": "Textiles",
+    "marketCap": "Mid Cap",
+    "style": "Growth",
+    "risk": "High",
+    "avgReturn": 18.3,
+    "volatility": 2.4,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 41382.62
+      },
+      {
+        "date": "2025-03-31",
+        "price": 41167.85
+      },
+      {
+        "date": "2025-04-01",
+        "price": 40950.25
+      },
+      {
+        "date": "2025-04-02",
+        "price": 40921.74
+      },
+      {
+        "date": "2025-04-03",
+        "price": 40754.43
+      },
+      {
+        "date": "2025-04-04",
+        "price": 40751.34
+      },
+      {
+        "date": "2025-04-05",
+        "price": 40500
+      }
+    ]
+  },
+  {
+    "symbol": "GODREJCP.NS",
+    "name": "Godrej Consumer Products",
+    "sector": "FMCG",
+    "marketCap": "Large Cap",
+    "style": "Blend",
+    "risk": "Medium",
+    "avgReturn": 12.1,
+    "volatility": 1.6,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1087.64
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1083.31
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1089.35
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1083.29
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1082.82
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1082.99
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1090
+      }
+    ]
+  },
+  {
+    "symbol": "UBL.NS",
+    "name": "United Breweries Ltd",
+    "sector": "Beverages",
+    "marketCap": "Mid Cap",
+    "style": "Value",
+    "risk": "High",
+    "avgReturn": 10.4,
+    "volatility": 2.0,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1437.29
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1436.68
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1439.34
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1447.86
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1454.32
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1448.96
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1450
+      }
+    ]
+  },
+  {
+    "symbol": "TITAN.NS",
+    "name": "Titan Company Ltd",
+    "sector": "Luxury",
+    "marketCap": "Large Cap",
+    "style": "Growth",
+    "risk": "Low",
+    "avgReturn": 15.2,
+    "volatility": 1.1,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3240.56
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3229.31
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3253.19
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3262.57
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3254.5
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3259.63
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3250
+      }
+    ]
+  },
+  {
+    "symbol": "COLPAL.NS",
+    "name": "Colgate-Palmolive India",
+    "sector": "FMCG",
+    "marketCap": "Large Cap",
+    "style": "Value",
+    "risk": "Low",
+    "avgReturn": 9.8,
+    "volatility": 1.3,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1715.6
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1704.28
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1712.59
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1715.51
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1727.92
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1721.4
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1720
+      }
+    ]
+  },
+  {
+    "symbol": "ADANITRANS.NS",
+    "name": "Adani Transmission Ltd",
+    "sector": "Utilities",
+    "marketCap": "Large Cap",
+    "style": "Growth",
+    "risk": "High",
+    "avgReturn": 17.0,
+    "volatility": 2.6,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 987.04
+      },
+      {
+        "date": "2025-03-31",
+        "price": 984.27
+      },
+      {
+        "date": "2025-04-01",
+        "price": 982.4
+      },
+      {
+        "date": "2025-04-02",
+        "price": 984.29
+      },
+      {
+        "date": "2025-04-03",
+        "price": 986.27
+      },
+      {
+        "date": "2025-04-04",
+        "price": 982.36
+      },
+      {
+        "date": "2025-04-05",
+        "price": 980
+      }
+    ]
+  },
+  {
+    "symbol": "SRF.NS",
+    "name": "SRF Ltd",
+    "sector": "Chemicals",
+    "marketCap": "Mid Cap",
+    "style": "Blend",
+    "risk": "Medium",
+    "avgReturn": 13.7,
+    "volatility": 1.7,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 2432.49
+      },
+      {
+        "date": "2025-03-31",
+        "price": 2428.64
+      },
+      {
+        "date": "2025-04-01",
+        "price": 2440.84
+      },
+      {
+        "date": "2025-04-02",
+        "price": 2446.76
+      },
+      {
+        "date": "2025-04-03",
+        "price": 2462.65
+      },
+      {
+        "date": "2025-04-04",
+        "price": 2464.07
+      },
+      {
+        "date": "2025-04-05",
+        "price": 2450
+      }
+    ]
+  },
+  {
+    "symbol": "PIIND.NS",
+    "name": "PI Industries Ltd",
+    "sector": "Agrochemicals",
+    "marketCap": "Mid Cap",
+    "style": "Growth",
+    "risk": "High",
+    "avgReturn": 14.8,
+    "volatility": 2.2,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3418.77
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3421.89
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3422.67
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3431.89
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3452.37
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3452.53
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3450
+      }
+    ]
+  },
+  {
+    "symbol": "ICICIPRULI.NS",
+    "name": "ICICI Prudential Life",
+    "sector": "Insurance",
+    "marketCap": "Large Cap",
+    "style": "Blend",
+    "risk": "Medium",
+    "avgReturn": 11.5,
+    "volatility": 1.5,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 582.6
+      },
+      {
+        "date": "2025-03-31",
+        "price": 586.53
+      },
+      {
+        "date": "2025-04-01",
+        "price": 583.73
+      },
+      {
+        "date": "2025-04-02",
+        "price": 583.51
+      },
+      {
+        "date": "2025-04-03",
+        "price": 579.99
+      },
+      {
+        "date": "2025-04-04",
+        "price": 576.15
+      },
+      {
+        "date": "2025-04-05",
+        "price": 575
+      }
+    ]
+  },
+  {
+    "symbol": "MFSL.NS",
+    "name": "Max Financial Services",
+    "sector": "Finance",
+    "marketCap": "Mid Cap",
+    "style": "Blend",
+    "risk": "Medium",
+    "avgReturn": 10.2,
+    "volatility": 1.8,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 923.8
+      },
+      {
+        "date": "2025-03-31",
+        "price": 929.52
+      },
+      {
+        "date": "2025-04-01",
+        "price": 928.6
+      },
+      {
+        "date": "2025-04-02",
+        "price": 923.76
+      },
+      {
+        "date": "2025-04-03",
+        "price": 930.01
+      },
+      {
+        "date": "2025-04-04",
+        "price": 924.78
+      },
+      {
+        "date": "2025-04-05",
+        "price": 920
+      }
+    ]
+  },
+  {
+    "symbol": "ALKEM.NS",
+    "name": "Alkem Laboratories Ltd",
+    "sector": "Pharmaceuticals",
+    "marketCap": "Mid Cap",
+    "style": "Value",
+    "risk": "Low",
+    "avgReturn": 9.3,
+    "volatility": 1.4,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3614.44
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3634.03
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3658.44
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3635.87
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3647.37
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3625.83
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3640
+      }
+    ]
+  },
+  {
+    "symbol": "CUMMINSIND.NS",
+    "name": "Cummins India Ltd",
+    "sector": "Engineering",
+    "marketCap": "Mid Cap",
+    "style": "Growth",
+    "risk": "Medium",
+    "avgReturn": 13.0,
+    "volatility": 1.9,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1877.15
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1888.57
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1887.95
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1877.25
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1872.31
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1870.01
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1880
+      }
+    ]
+  },
+  {
+    "symbol": "ASTRAL.NS",
+    "name": "Astral Ltd",
+    "sector": "Building Materials",
+    "marketCap": "Mid Cap",
+    "style": "Blend",
+    "risk": "Medium",
+    "avgReturn": 12.7,
+    "volatility": 1.6,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 2042.11
+      },
+      {
+        "date": "2025-03-31",
+        "price": 2043.33
+      },
+      {
+        "date": "2025-04-01",
+        "price": 2047.11
+      },
+      {
+        "date": "2025-04-02",
+        "price": 2050.69
+      },
+      {
+        "date": "2025-04-03",
+        "price": 2040.98
+      },
+      {
+        "date": "2025-04-04",
+        "price": 2050.55
+      },
+      {
+        "date": "2025-04-05",
+        "price": 2040
+      }
+    ]
+  },
+  {
+    "symbol": "MCDOWELL-N.NS",
+    "name": "United Spirits Ltd",
+    "sector": "Beverages",
+    "marketCap": "Large Cap",
+    "style": "Value",
+    "risk": "High",
+    "avgReturn": 11.9,
+    "volatility": 2.3,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 924.57
+      },
+      {
+        "date": "2025-03-31",
+        "price": 928.36
+      },
+      {
+        "date": "2025-04-01",
+        "price": 926.75
+      },
+      {
+        "date": "2025-04-02",
+        "price": 925.68
+      },
+      {
+        "date": "2025-04-03",
+        "price": 930.36
+      },
+      {
+        "date": "2025-04-04",
+        "price": 936.69
+      },
+      {
+        "date": "2025-04-05",
+        "price": 940
+      }
+    ]
+  },
+  {
+    "symbol": "NAVINFLUOR.NS",
+    "name": "Navin Fluorine International",
+    "sector": "Chemicals",
+    "marketCap": "Mid Cap",
+    "style": "Growth",
+    "risk": "High",
+    "avgReturn": 16.1,
+    "volatility": 2.5,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3454.97
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3436.57
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3430.25
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3420.76
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3422.63
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3423.91
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3400
+      }
+    ]
+  },
+  {
+    "symbol": "LODHA.NS",
+    "name": "Macrotech Developers Ltd",
+    "sector": "Real Estate",
+    "marketCap": "Mid Cap",
+    "style": "Blend",
+    "risk": "High",
+    "avgReturn": 12.5,
+    "volatility": 2.4,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1120.04
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1126.95
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1127.08
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1127.62
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1123.97
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1118.56
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1120
+      }
+    ]
+  },
+  {
+    "symbol": "METROPOLIS.NS",
+    "name": "Metropolis Healthcare",
+    "sector": "Healthcare",
+    "marketCap": "Mid Cap",
+    "style": "Value",
+    "risk": "Medium",
+    "avgReturn": 10.8,
+    "volatility": 1.7,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 1434.39
+      },
+      {
+        "date": "2025-03-31",
+        "price": 1441.88
+      },
+      {
+        "date": "2025-04-01",
+        "price": 1448.64
+      },
+      {
+        "date": "2025-04-02",
+        "price": 1455.84
+      },
+      {
+        "date": "2025-04-03",
+        "price": 1447.35
+      },
+      {
+        "date": "2025-04-04",
+        "price": 1441.95
+      },
+      {
+        "date": "2025-04-05",
+        "price": 1450
+      }
+    ]
+  },
+  {
+    "symbol": "ESCORTS.NS",
+    "name": "Escorts Kubota Ltd",
+    "sector": "Machinery",
+    "marketCap": "Mid Cap",
+    "style": "Blend",
+    "risk": "Medium",
+    "avgReturn": 13.4,
+    "volatility": 1.9,
+    "priceHistory": [
+      {
+        "date": "2025-03-30",
+        "price": 3187.99
+      },
+      {
+        "date": "2025-03-31",
+        "price": 3192.48
+      },
+      {
+        "date": "2025-04-01",
+        "price": 3187.05
+      },
+      {
+        "date": "2025-04-02",
+        "price": 3208.99
+      },
+      {
+        "date": "2025-04-03",
+        "price": 3217.41
+      },
+      {
+        "date": "2025-04-04",
+        "price": 3213.13
+      },
+      {
+        "date": "2025-04-05",
+        "price": 3200
+      }
+    ]
+  }
+]

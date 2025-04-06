@@ -18,8 +18,8 @@ mongoose.connect(MONGO_URI).then(() => {
 
 async function seedStocks() {
   try {
-    await StockMaster.deleteMany({});
-    console.log('🗑️ Cleared old stock data');
+    // await StockMaster.deleteMany({});
+    // console.log('🗑️ Cleared old stock data');
 
     await StockMaster.insertMany(stockData);
     console.log(`✅ Seeded ${stockData.length} stocks`);
