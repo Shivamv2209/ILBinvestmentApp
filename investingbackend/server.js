@@ -9,6 +9,8 @@ import userRouter from './routes/userRouter.js';
 import MutualFundMaster from './models/mutualfundmaster.js';
 import StockMaster from './models/stockmaster.js';
 import recommendRoutes from './routes/recommendRoutes.js';
+import newRoutes from "./routes/newsRoutes.js";
+import  yahooFinance from "yahoo-finance2"
 
 dotenv.config();
 
@@ -33,6 +35,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/user", userRouter);
 app.use("/api/master", masterRoutes);
 app.use("/api", recommendRoutes)
+//app.use("/api/news",newRoutes);
+
+app.get('/api/stock/:symbol', async (req, res) => {
+  const symbol = req.params.symbol;
+  try {
+    const quote = await yahooFinance.quote(symbol);
+    res.json({
+      name: quote.shortName || symbol,
+      price: quote.regularMarketPrice,
+      change: quote.regularMarketChangePercent
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch stock data.' });
+  }
+});
 
 // Function to simulate price/NAV change
 const simulateChange = (value) => {
